@@ -1,4 +1,3 @@
-<!DOCTYPE HTML>
 <div class="container">
     <header class="header">
         <svg class="header-logo" width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -9,11 +8,17 @@
 
     <main class="main">
         <div class="main-player-turn">
-            <div class="player-turn-container">
+            <div class="player-1-turn-container" data-player-1-turn>
                 <svg class="player-turn-svg" width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <use href="../assets/sprite.svg#x"></use>
                 </svg>
                 <h2 class="player-turn-title">Player 1 turn</h2>
+            </div>
+            <div class="player-2-turn-container" data-player-2-turn>
+                <svg class="player-turn-svg" width="41" height="42" viewBox="0 0 41 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <use href="../assets/sprite.svg#ellipse"></use>
+                </svg>
+                <h2 class="player-turn-title">Player 2 turn</h2>
             </div>
         </div>
         <div class="main-game-menu">
@@ -35,19 +40,31 @@
                 </div>
                 <div class="player-2-score score-container">0</div>
             </div>
-            <button class="menu-reset-current button" type="button">Reset current game</button>
+            <button class="menu-reset-current button" type="button" (click)="resetCurrentGame()">Reset current game</button>
             <button class="menu-reset-all button" type="button">Reset all</button>
         </div>
         <div class="main-gameplay">
-            <div class="gameplay-item"></div>
-            <div class="gameplay-item"></div>
-            <div class="gameplay-item"></div>
-            <div class="gameplay-item"></div>
-            <div class="gameplay-item"></div>
-            <div class="gameplay-item"></div>
-            <div class="gameplay-item"></div>
-            <div class="gameplay-item"></div>
-            <div class="gameplay-item"></div>
+            <div class="gameplay-item" (click)="changePlayer()">
+                <div class="item-1-default" data-item-1-default></div>
+                <div class="item-1-player-1" data-item-1-player-1>
+                    <svg width="117" height="116" viewBox="0 0 117 116" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <use href="../assets/sprite.svg#x-large"></use>
+                    </svg>
+                </div>
+                <div class="item-1-player-2" data-item-1-player-2>
+                    <svg width="148" height="148" viewBox="0 0 148 148" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <use href="../assets/sprite.svg#ellipse-large"></use>
+                    </svg>
+                </div>
+            </div>
+            <div class="gameplay-item" (click)="changePlayer()"></div>
+            <div class="gameplay-item" (click)="changePlayer()"></div>
+            <div class="gameplay-item" (click)="changePlayer()"></div>
+            <div class="gameplay-item" (click)="changePlayer()"></div>
+            <div class="gameplay-item" (click)="changePlayer()"></div>
+            <div class="gameplay-item" (click)="changePlayer()"></div>
+            <div class="gameplay-item" (click)="changePlayer()"></div>
+            <div class="gameplay-item" (click)="changePlayer()"></div>
         </div>
     </main>
 </div>
